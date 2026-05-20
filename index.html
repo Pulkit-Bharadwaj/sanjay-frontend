@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sanjay - AI Re-ID</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Sanjay: AI Re-Identification</h1>
+
+    <div class="upload-box">
+      <label>Reference Image (Person Photo)</label>
+      <input type="file" id="refImage" accept="image/*" />
+    </div>
+
+    <div class="upload-box">
+      <label>Upload Video Clip</label>
+      <input type="file" id="videoFile" accept="video/*" />
+    </div>
+
+    <button onclick="processVideo()">🚀 Identify Person</button>
+
+    <div id="result" class="hidden">
+      <h2>✅ Results</h2>
+      <p id="timestamps"></p>
+      <a id="downloadBtn" href="#" download>⬇️ Download Processed Video</a>
+    </div>
+
+    <div id="loading" class="hidden">⏳ Processing... please wait</div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

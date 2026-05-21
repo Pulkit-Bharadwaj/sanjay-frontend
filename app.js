@@ -4,9 +4,6 @@ function processVideo() {
   const ref = document.getElementById('refImage').files[0];
   const video = document.getElementById('videoFile').files[0];
   
-  console.log("Ref file:", ref);
-  console.log("Video file:", video);
-  
   if (!ref || !video) {
     alert("Please upload both files!");
     return;
@@ -19,9 +16,7 @@ function processVideo() {
   formData.append('reference', ref);
   formData.append('video', video);
 
-  console.log("Sending request to backend...");
-
-  fetch('http://127.0.0.1:5000/process', {
+  fetch('https://web-production-c800d.up.railway.app/process', {
     method: 'POST',
     body: formData
   })
@@ -37,7 +32,7 @@ function processVideo() {
     } else {
       document.getElementById('timestamps').textContent =
         "Person appears at: " + data.timestamps.join('s, ') + "s";
-      document.getElementById('downloadBtn').href = 'http://127.0.0.1:5000/download';
+      document.getElementById('downloadBtn').href = 'https://web-production-c800d.up.railway.app/download';
       document.getElementById('result').classList.remove('hidden');
     }
   })
